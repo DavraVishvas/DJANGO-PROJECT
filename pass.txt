@@ -1,0 +1,28 @@
+vishvas
+Admin@123
+
+python manage.py shell
+from student.models import *
+s=Student(name:"aa",mark:1)
+s.save()
+s
+Student.objects.all()
+
+Student.objects.all()[0].name
+
+1. for loop
+
+s=Student.objects.all()
+
+>>> for i in s:  
+...     print(i.name)
+... 
+Vishvas
+aa
+
+2. time loop
+
+>>> from student.tests import *
+>>> test()
+hel9lo
+exit

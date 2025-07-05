@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <td>ID:</td>
+        <td>NAME:</td>
+        <td>MARKS:</td>
+        <td>DELETE</td>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in f %}
+      <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.mark}}</td>
+        <td><a href="/delete/{{i.id}}">DELETE</a></td>
+        <td><a href="/update/{{i.id}}">UPDATE</a></td>
+      </tr>
+      
+      {% endfor %}
+      <center><a href="/studentdata/">ADD NEW RECORD</a></center>
+    </tbody>
+  </table>
+</body>
+</html>

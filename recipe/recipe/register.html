@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+
+  <form class="col-6 mx-auto card p-3 shadow ig" method="post">
+    <h2 class="col-6  mx-auto">Create an Account</h2><br>
+    {% if messages %}
+    <div class="alert alert-danger" role="alert">
+        {% for msg in messages %}
+        {{msg}}
+        {% endfor %}
+    </div>
+    {% endif %}
+      {% csrf_token %}
+      <div class="mb-3">
+          <label class="form-label">USERNAME</label>
+          <input type="text" class="form-control" name="uname">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">FIRSTNAME</label>
+          <input type="text" class="form-control" name="fname">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">LASTName</label>
+          <input type="text" class="form-control" name="lname">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" name="email">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-control" name="password">
+        </div>
+        <p>Already registered !!<a href="/login">LOGIN</a></p>
+        <button type="submit" class="btn btn-primary">REGISTER</button>
+    </form>
+</div>
+
+{% endblock %}

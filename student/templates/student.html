@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link href="{% static 'css/vote.css' %}" rel="stylesheet">
+  
+</head>
+<body>
+    <!-- <h4>This is my student list</h4>
+      {{msg}}
+      {{sl}}
+      <br>
+      {% for i in l %}
+      {{i}}
+      <br>
+      {% endfor %} -->
+
+      <table class="ar" border="1px">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Can vote</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in l %}
+          <tr class="ar">
+            <td>{{i.id}}</td>
+            <td>{{i.Name}}</td>
+            <td>{{i.age}}</td>
+            <td>{{i.email}}</td>
+            {% if i.age >= 18%}</td>
+            <td class="yes">yes</td>
+            {%else%}
+            <td class="no">no</td>
+            {% endif %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <img src="{% static 'images/example.jpg' %}" alt="" class="image-container"><br>
+      <button onclick="showAlert()">Greet</button>
+      <script src="{% static 'js/picture.js' %}"></script>
+</body>
+</html> 

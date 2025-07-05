@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+    <h2 class="col-2 mx-auto ">ADD RECIPE</h2>
+    <form class="col-6 mx-auto card p-3 shadow ig" method="POST" enctype='multipart/form-data'>
+      {% csrf_token %}
+
+        <div class="mb-3">
+          <label class="form-label">Name</label>
+          <input type="text" class="form-control" name="name" value="{{r.name}}" aria-describedby="emailHelp">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Discription</label>
+          <textarea type="text" name="des" class="form-control">{{r.des}}</textarea>
+        </div>
+
+        <div class="mb-3">
+          {% if r.images %}
+          <a href="{{r.images.url}}">VIEW IMAGE</a>
+          {% else %}
+          <td></td>
+          {% endif %}
+          <label class="form-label">Image</label>
+          <input type="file" name="image" class="form-control">
+        </div>
+
+        <button type="submit" class="btn btn-primary">ADD RECIPE</button>
+    </form>
+</div>
+
+{% endblock %}
